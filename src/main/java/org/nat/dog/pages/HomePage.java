@@ -89,5 +89,11 @@ public class HomePage extends BasePage {
         click(submitInRegistrationFormButton);
         return this;
     }
+
+    @FindBy(xpath = " //div[contains(text(),'Please provide a valid e-mail.')]")
+    WebElement wrongEmail;
+    public void warningWrongEmail(String textAboutMistake) {
+        Assert.assertTrue(shouldHaveText(wrongEmail, textAboutMistake, 10));
+    }
 }
 
