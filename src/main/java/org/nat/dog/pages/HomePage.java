@@ -47,7 +47,6 @@ public class HomePage extends BasePage {
         return this;
     }
 
-
 // регистрация
     @FindBy(xpath = "//button[contains(text(),'Registration')]") //потом поменять локатор на Registered
     WebElement registrationLink;
@@ -81,18 +80,14 @@ public class HomePage extends BasePage {
     WebElement clickOnCheckBoxInRegistrationForm;
     public HomePage clickOnCheckBox() {
         click(clickOnCheckBoxInRegistrationForm);
-       // pause(10000);
         return this;
     }
-
 
     @FindBy(xpath = "//button[contains(text(),'Submit form')]")
     WebElement submitInRegistrationFormButton;
     public HomePage submitInRegistrationForm() {
         click(submitInRegistrationFormButton);
-       // pause(10000);
         return this;
     }
-
 }
 
