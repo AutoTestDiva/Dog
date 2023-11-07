@@ -63,6 +63,5 @@ public class HomePageTests extends TestBase {
                 .clickOnCheckBox()
                 .submitInRegistrationForm()
                 .warningWrongEmail("Please provide a valid e-mail.");
-
     }
 }
