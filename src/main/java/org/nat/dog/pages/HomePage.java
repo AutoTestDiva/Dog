@@ -18,6 +18,41 @@ public class HomePage extends BasePage {
         return firstPicture.isDisplayed();
     }
 
+
+
+
+    @FindBy(css="#name-input[name='firstName']")
+    WebElement firstNameField;
+    @FindBy(css="#name-input[name='lastName']")
+    WebElement lastNameField;
+    @FindBy(css="#name-input[name='userName']")
+    WebElement usernameField;
+    @FindBy(css="#name-input[name='city']")
+    WebElement cityField;
+    @FindBy(css="#name-input[name='zip']")
+    WebElement zipField;
+    @FindBy(css="#name-input[name='username']")
+    WebElement emailField;
+    @FindBy(css="#password-input[name='password']")
+    WebElement passwordField;
+    @FindBy(css="#password-repeat-input[name='passwordRepeat']")
+    WebElement repeatPasswordField;
+
+
+    public HomePage enterRegistrationData(String firstName, String lastName, String username,
+                                          String city, String zip, String email, String password,
+                                          String repeatPassword){
+        type(firstNameField, firstName);
+        type(lastNameField, lastName);
+        type(usernameField, username);
+        type(cityField, city);
+        type(zipField, zip);
+        type(emailField, email);
+        type(passwordField, password);
+        type(repeatPasswordField, repeatPassword);
+        return this;
+    }
+
     //залогинивание
     @FindBy(xpath = "//button[contains(text(),'Log In')]")
     WebElement loginLink;
@@ -25,17 +60,17 @@ public class HomePage extends BasePage {
         click(loginLink);
         return this;
     }
-    @FindBy(id="validationCustom04")
-    WebElement emailField;
-    @FindBy(id="Form.Password")
-    WebElement passwordField;
-    @FindBy(css="[type='submit']")
-    WebElement submitFormButton;
-     public HomePage enterLoginData(String email, String password){
-        type(emailField, email);
+
+    @FindBy(css="#name-input[name='username']")
+    WebElement userLoginField;
+     public HomePage enterLoginData(String username, String password){
+        type(userLoginField, username);
         type(passwordField, password);
         return this;
     }
+
+    @FindBy(css="[type='submit']")
+    WebElement submitFormButton;
     public HomePage submit() {
         click(submitFormButton);
         return this;
@@ -54,27 +89,7 @@ public class HomePage extends BasePage {
         click(registrationLink);
         return this;
     }
-    @FindBy(id="validationCustom01")
-    WebElement firstNameField;
-    @FindBy(id="validationCustom02")
-    WebElement lastNameField;
-    @FindBy(id="validationCustomUsername")
-    WebElement usernameField;
-    @FindBy(id="validationCustom03")
-    WebElement cityField;
-    @FindBy(id="validationCustom05")
-    WebElement zipField;
-    public HomePage enterRegistrationData(String firstName, String lastName, String username,
-                                          String city, String zip, String email, String password){
-        type(firstNameField, firstName);
-        type(lastNameField, lastName);
-        type(usernameField, username);
-        type(cityField, city);
-        type(zipField, zip);
-        type(emailField, email);
-        type(passwordField, password);
-        return this;
-    }
+
 
     @FindBy(css = ".form-check-input")
     WebElement clickOnCheckBoxInRegistrationForm;
@@ -83,17 +98,24 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    @FindBy(xpath = "//button[contains(text(),'Submit form')]")
+    @FindBy(xpath="//button[@type='submit']")
     WebElement submitInRegistrationFormButton;
     public HomePage submitInRegistrationForm() {
         click(submitInRegistrationFormButton);
         return this;
     }
 
-    @FindBy(xpath = " //div[contains(text(),'Please provide a valid e-mail.')]")
+    @FindBy(css = ".invalid-feedback.mb-3")
+    WebElement wrongUserName;
+    public void warningWrongUserName(String textAboutMistake) {
+        Assert.assertTrue(shouldHaveText(wrongUserName, textAboutMistake, 10));
+    }
+
+
+    @FindBy(css = ".invalid-feedback.mb-3")
     WebElement wrongEmail;
     public void warningWrongEmail(String textAboutMistake) {
-        Assert.assertTrue(shouldHaveText(wrongEmail, textAboutMistake, 10));
+        Assert.assertTrue(shouldHaveText(wrongUserName, textAboutMistake, 10));
     }
 }
 
