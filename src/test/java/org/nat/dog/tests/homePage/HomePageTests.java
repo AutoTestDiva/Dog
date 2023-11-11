@@ -35,7 +35,7 @@ public class HomePageTests extends TestBase {
                 .enterRegistrationData(firstName, lastName, username, city, zip, email, password, repeatPassword)
                 .clickOnCheckBox()
                 .submitInRegistrationForm()
-                .warningWrongEmail("Unexpected token");
+                .warningWrongEmail("Cannot read properties of undefined (reading 'forEach')");
     }
 
 

@@ -1,5 +1,8 @@
 package org.nat.dog.pages;
 
+import org.nat.dog.pages.about.AboutPage;
+import org.nat.dog.pages.clinics.ClinicsPage;
+import org.nat.dog.pages.kennels.KennelsPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -115,7 +118,32 @@ public class HomePage extends BasePage {
     @FindBy(css = ".invalid-feedback.mb-3")
     WebElement wrongEmail;
     public void warningWrongEmail(String textAboutMistake) {
-        Assert.assertTrue(shouldHaveText(wrongUserName, textAboutMistake, 10));
+        Assert.assertTrue(shouldHaveText(wrongEmail, textAboutMistake, 10));
+    }
+
+
+    @FindBy(xpath = "//a[contains(text(),'Clinics')]")
+    WebElement clinicsLink;
+
+    public ClinicsPage getClinics() {
+        click(clinicsLink);
+        return new ClinicsPage(driver);
+
+    }
+
+    @FindBy(xpath = "//a[contains(text(),'Kennels')]")
+    WebElement kennelsLink;
+
+    public KennelsPage getKennels() {
+        click(kennelsLink);
+        return new KennelsPage(driver);
+    }
+
+    @FindBy(xpath = "//a[contains(text(),'About')]")
+    WebElement aboutLink;
+    public AboutPage getAbout() {
+        click(aboutLink);
+        return new AboutPage(driver);
     }
 }
 
