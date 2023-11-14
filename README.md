@@ -12,21 +12,21 @@ Site sections of testing
 7. 	Search for Veterinary Clinics
 8. 	Search for Animal Shelters
 9. 	Search for Kennels for different breeds of dogs
-10.        Specifying the location of the dogsitter instead of the city
-11.            Administration
+10.     Specifying the location of the dogsitter instead of the city
+11.     Administration
 
 For Running Automated Tests were used 
-Selenium, TestNG
+    Selenium, TestNG
 
  Utilizing
-  Maven
+    Maven
  Reports and Bug Reports
-·       TestPlan you can look here:                   testPlan
- ·       Specification of the project look here:   specification
- ·       Test items were made using MindMup:  testItems
+·       TestPlan you can look here:              testPlan
+ ·       Specification of the project look here: specification
+ ·       Test items were made using MindMup:     testItems
  ·       Bug tracking are done using JIRA:       bugTracking
  ·        Test reports are done using TestLink:  testReports_1
-          testReports_2
+                                                 testReports_2
 
 Integration with Jenkins
 Automated tests are integrated with Jenkins for regular code checks.autoTestsResults
