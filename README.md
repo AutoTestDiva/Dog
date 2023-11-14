@@ -30,7 +30,7 @@ Selenium, TestNG
           [testReports_2](https://drive.google.com/file/d/1BS3HR1GZG_bseTdHmbChnlJ6REYeDReD/view?usp=sharing)
 
 Integration with Jenkins
-Automated tests are integrated with Jenkins for regular code checks: [autoTestsResults](https://drive.google.com/file/d/1BS3HR1GZG_bseTdHmbChnlJ6REYeDReD/view?usp=sharing)
+Automated tests are integrated with Jenkins for regular code checks: [autoTestsResults](https://drive.google.com/drive/folders/1gNH0KdGPR2ygKUES9SH4fK9nW7B4kuGB?usp=sharing)
 
 
 Thank you for using the Dog Services Automated Testing Project!   🐾
