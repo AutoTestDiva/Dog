@@ -15,6 +15,6 @@ public class AboutPageTests extends TestBase {
 
     @Test
     public void isAboutComponentPresentTest() {
-        new AboutPage(driver).verifyAboutElement("ABOUT US");
+        new AboutPage(driver).verifyAboutElement("About");
     }
 }

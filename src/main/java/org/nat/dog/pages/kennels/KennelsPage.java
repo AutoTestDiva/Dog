@@ -11,7 +11,7 @@ public class KennelsPage extends BasePage {
     public KennelsPage(WebDriver driver) {
         super(driver);
     }
-    @FindBy(xpath="//div[@id='root']/div/div/h1")
+    @FindBy(xpath="//a[contains(text(),'Kennels')]")
     WebElement titleKennels;
     public KennelsPage verifyKennelsElement(String text) {
         Assert.assertTrue(isTextPresent(titleKennels, text));
