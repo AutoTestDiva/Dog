@@ -13,6 +13,14 @@ public class HomePageTests extends TestBase {
         new HomePage(driver).isHomeComponentPresent();
     }
 
+    @Test
+    public void isRegistrationLinkPresentTest() {
+        new HomePage(driver).isRegistrationLinkPresent();
+    }
+
+
+
+
     //проверка позитивной регистрации
     @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveRegistrationDataFormCSVFile")
     public void fillRegistrationFormUsingDataProviderPositiveTest(String firstName, String lastName,
@@ -23,7 +31,8 @@ public class HomePageTests extends TestBase {
                 .enterRegistrationData(firstName, lastName, username, city, zip, email, password,repeatPassword)
                 .clickOnCheckBox()
                 .submitInRegistrationForm()
-                .verifyLogout("Log In"); //потом "Log In" поменять на Logout
+                .verifyFinishingRegistration("Окончание регистрации") //потом "Log In" поменять на Logout
+                .clickOk();
     }
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "negativeRegistrationDataFormCSVFile")
@@ -35,10 +44,8 @@ public class HomePageTests extends TestBase {
                 .enterRegistrationData(firstName, lastName, username, city, zip, email, password, repeatPassword)
                 .clickOnCheckBox()
                 .submitInRegistrationForm()
-                .warningWrongEmail("Cannot read properties of undefined (reading 'forEach')");
+                .warningWrongEmail();
     }
-
-
 
     @Test   //первый способ ввода юзернейма, password не из файла csv, а из class UserData
     public void loginPositiveTest1() {
@@ -46,7 +53,7 @@ public class HomePageTests extends TestBase {
         new HomePage(driver)
                 .enterLoginData(UserData.USER_NAME, UserData.USER_PASSWORD)
                 .submit()
-                .verifyLogout("Log In"); //потом поменять на Logout
+                .verifyLogout("Log Out"); //потом поменять на Logout
     }
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveLoginDataFormCSVFile")
@@ -55,7 +62,8 @@ public class HomePageTests extends TestBase {
         new HomePage(driver).getLoginLink()
                 .enterLoginData(username, password)
                 .submit()
-                .verifyLogout("Log In"); //потом "Log In" поменять на Logout
+                .verifyLogout("Log Out"); //потом "Log In" поменять на Logout
+
     }
     //с использованием файла
     @Test(dataProviderClass = DataProviders.class, dataProvider = "negativeLoginDataFormCSVFile")

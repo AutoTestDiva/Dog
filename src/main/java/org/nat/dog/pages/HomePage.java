@@ -22,6 +22,9 @@ public class HomePage extends BasePage {
     }
 
 
+    public boolean isRegistrationLinkPresent() {
+        return registrationLink.isDisplayed();
+    }
 
 
     @FindBy(css="#name-input[name='firstName']")
@@ -78,10 +81,23 @@ public class HomePage extends BasePage {
         click(submitFormButton);
         return this;
     }
-    @FindBy(xpath = "//button[contains(text(),'Log In')]") //потом поменять локатор на Logout
+
+
+    @FindBy(css=".btn.btn-secondary")
+    WebElement OkButton;
+    public HomePage clickOk() {
+        pause(1000);
+        click(OkButton);
+        return this;
+    }
+
+
+
+    @FindBy(xpath = "//button[contains(text(),'Log Out')]") //потом поменять локатор на Logout
     WebElement logoutLink;
     public HomePage verifyLogout(String logout){
         Assert.assertTrue(shouldHaveText(logoutLink, logout, 10));
+        pause(10);
         return this;
     }
 
@@ -117,8 +133,8 @@ public class HomePage extends BasePage {
 
     @FindBy(css = ".invalid-feedback.mb-3")
     WebElement wrongEmail;
-    public void warningWrongEmail(String textAboutMistake) {
-        Assert.assertTrue(shouldHaveText(wrongEmail, textAboutMistake, 10));
+    public boolean warningWrongEmail() {
+        return wrongEmail.isDisplayed();
     }
 
 
@@ -144,6 +160,15 @@ public class HomePage extends BasePage {
     public AboutPage getAbout() {
         click(aboutLink);
         return new AboutPage(driver);
+    }
+
+
+
+    @FindBy(xpath = "//div[contains(text(),'Окончание регистрации')]")
+    WebElement finishingRegistrationLink;
+    public HomePage verifyFinishingRegistration(String text) {
+        Assert.assertTrue(shouldHaveText(finishingRegistrationLink, text, 20));
+        return this;
     }
 }
 

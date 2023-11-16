@@ -40,14 +40,14 @@ public class TestBase {
         }
         WebDriverListener listener = new MyListener();
         driver = new EventFiringDecorator(listener).decorate(driver);
-        driver.get("https://www.hunde24.online/");
+        driver.get("https://hunde24.online/front/");
         logger.info("The link --> " + driver.getCurrentUrl());
         logger.info("***********************************");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @AfterMethod(enabled = true)
+    @AfterMethod(enabled = false)
     public void tearDown() {
         driver.quit();
     }
