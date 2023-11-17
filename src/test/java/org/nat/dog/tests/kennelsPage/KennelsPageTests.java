@@ -11,18 +11,18 @@ import org.testng.annotations.Test;
 public class KennelsPageTests extends TestBase {
     @BeforeMethod
     public void precondition(){
-        new HomePage(driver).getLoginLink();
+        /*new HomePage(driver).getLoginLink();
         new HomePage(driver)
                 .enterLoginData(UserData.USER_NAME, UserData.USER_PASSWORD)
                 .submit()
-                .verifyLogout("Log Out");
+                .verifyLogout("Log Out");*/
 
-        //new HomePage(driver).getKennels();
+        new HomePage(driver).getKennels();
 
     }
 
     @Test
-    public void isKennelsComponentPresentTest() {
+    public void KennelsPageTests() {
         new KennelsPage(driver).verifyKennelsElement("Kennels");
     }
 

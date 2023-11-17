@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class HomePageTests extends TestBase {
     //проверка элемента на главной странице
- /*   @Test
+    @Test
     public void isHomeComponentPresentTest() {
         new HomePage(driver).isHomeComponentPresent();
     }
@@ -45,7 +45,7 @@ public class HomePageTests extends TestBase {
                 .clickOnCheckBox()
                 .submitInRegistrationForm()
                 .warningWrongEmail();
-    }*/
+    }
 
     @Test   //первый способ ввода юзернейма, password не из файла csv, а из class UserData
     public void loginPositiveTest1() {
@@ -55,7 +55,7 @@ public class HomePageTests extends TestBase {
                 .submit()
                 .verifyLogout("Log Out");
     }
-/*
+
     @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveLoginDataFormCSVFile")
     //с использованием файла
     public void fillLoginFormUsingDataProviderTest(String username, String password) {
@@ -73,5 +73,5 @@ public class HomePageTests extends TestBase {
                 .enterLoginData(username, password)
                 .submit()
                 .warningWrongUserName("Не все поля заполнены");
-    }*/
+    }
 }

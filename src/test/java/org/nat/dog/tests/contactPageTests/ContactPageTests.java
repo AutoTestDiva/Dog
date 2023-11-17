@@ -8,6 +8,8 @@ import org.nat.dog.tests.TestBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static org.nat.dog.data.UserData.*;
+
 public class ContactPageTests extends TestBase {
     @BeforeMethod
     public void precondition(){
@@ -18,8 +20,10 @@ public class ContactPageTests extends TestBase {
     public void isGoingToGoogleMapsTest() {
         new ContactPage(driver).returnListOfFrames();
     }
-  /*  @Test
+    @Test
     public void fillInTouchFormTest() {
-        new ContactPage(driver).enterUserData()
-    }*/
+        new ContactPage(driver).enterUserData(USER_NAME_FOR_CONTACT_FORM,
+                USER_EMAIL_FOR_CONTACT_FORM, MESSAGE_FOR_CONTACT_FORM)
+                .sendMessageButton();
+    }
 }
