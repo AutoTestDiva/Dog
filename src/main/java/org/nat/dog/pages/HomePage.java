@@ -2,6 +2,7 @@ package org.nat.dog.pages;
 
 import org.nat.dog.pages.about.AboutPage;
 import org.nat.dog.pages.clinics.ClinicsPage;
+import org.nat.dog.pages.contact.ContactPage;
 import org.nat.dog.pages.kennels.KennelsPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -169,6 +170,14 @@ public class HomePage extends BasePage {
     public HomePage verifyFinishingRegistration(String text) {
         Assert.assertTrue(shouldHaveText(finishingRegistrationLink, text, 20));
         return this;
+    }
+
+
+    @FindBy(xpath = "//a[contains(text(),'Contact')]")
+    WebElement contactLink;
+    public ContactPage getContact() {
+        click(contactLink);
+        return new ContactPage(driver);
     }
 }
 

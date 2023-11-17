@@ -11,15 +11,14 @@ import org.testng.annotations.Test;
 
 public class ClinicsPageTests extends TestBase {
     @BeforeMethod
-
     public void precondition(){
-      /*  new HomePage(driver).getLoginLink();
+        new HomePage(driver).getLoginLink();
         new HomePage(driver)
                 .enterLoginData(UserData.USER_NAME, UserData.USER_PASSWORD)
                 .submit()
-                .verifyLogout("Log Out");*/
+                .verifyLogout("Log Out");
 
-        new HomePage(driver).getClinics();
+        //new HomePage(driver).getClinics();
 
     }
 
