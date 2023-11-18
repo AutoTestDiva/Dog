@@ -18,17 +18,14 @@ public class HomePageTests extends TestBase {
         new HomePage(driver).isRegistrationLinkPresent();
     }
 
-
-
-
     //проверка позитивной регистрации
     @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveRegistrationDataFormCSVFile")
     public void fillRegistrationFormUsingDataProviderPositiveTest(String firstName, String lastName,
                                                                   String username, String city, String zip,
                                                                   String email, String password,
-                                                                  String repeatPassword){
+                                                                  String repeatPassword) {
         new HomePage(driver).getRegistrationLink()
-                .enterRegistrationData(firstName, lastName, username, city, zip, email, password,repeatPassword)
+                .enterRegistrationData(firstName, lastName, username, city, zip, email, password, repeatPassword)
                 .clickOnCheckBox()
                 .submitInRegistrationForm()
                 .verifyFinishingRegistration("Окончание регистрации") //потом "Log In" поменять на Logout
@@ -39,7 +36,7 @@ public class HomePageTests extends TestBase {
     public void fillRegistrationFormUsingDataProviderNegativeTest(String firstName, String lastName,
                                                                   String username, String city, String zip,
                                                                   String email, String password,
-                                                                  String repeatPassword){
+                                                                  String repeatPassword) {
         new HomePage(driver).getRegistrationLink()
                 .enterRegistrationData(firstName, lastName, username, city, zip, email, password, repeatPassword)
                 .clickOnCheckBox()
@@ -65,6 +62,7 @@ public class HomePageTests extends TestBase {
                 .verifyLogout("Log Out"); //потом "Log In" поменять на Logout
 
     }
+
     //с использованием файла
     @Test(dataProviderClass = DataProviders.class, dataProvider = "negativeLoginDataFormCSVFile")
 
@@ -73,5 +71,11 @@ public class HomePageTests extends TestBase {
                 .enterLoginData(username, password)
                 .submit()
                 .warningWrongUserName("Не все поля заполнены");
+    }
+
+
+    @Test
+    void imgTest() {
+        new HomePage(driver).returnListOfImg();
     }
 }

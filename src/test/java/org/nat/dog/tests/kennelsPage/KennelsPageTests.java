@@ -26,5 +26,15 @@ public class KennelsPageTests extends TestBase {
         new KennelsPage(driver).verifyKennelsElement("Kennels");
     }
 
+
+    @Test
+    public void fillKennelsForm(){
+        new KennelsPage(driver).selectKennelsCity("Berlin");
+    }
+    @Test
+    public void showKennelsList(){
+        new KennelsPage(driver).clickKennelsList();
+
+    }
 }
 

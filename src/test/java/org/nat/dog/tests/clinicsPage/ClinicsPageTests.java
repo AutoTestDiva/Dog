@@ -30,6 +30,10 @@ public class ClinicsPageTests extends TestBase {
     @Test
     public void fillClinicsForm(){
         new ClinicsPage(driver).selectCity("Berlin");
+    }
+    @Test
+    public void showClinicsList(){
+        new ClinicsPage(driver).clickClinicsList();
 
     }
 }

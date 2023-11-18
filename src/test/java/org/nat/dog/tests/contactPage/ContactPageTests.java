@@ -1,8 +1,6 @@
-package org.nat.dog.tests.contactPageTests;
+package org.nat.dog.tests.contactPage;
 
-import org.nat.dog.data.UserData;
 import org.nat.dog.pages.HomePage;
-import org.nat.dog.pages.about.AboutPage;
 import org.nat.dog.pages.contact.ContactPage;
 import org.nat.dog.tests.TestBase;
 import org.testng.annotations.BeforeMethod;

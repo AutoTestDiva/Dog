@@ -18,7 +18,6 @@ public class ContactPage extends BasePage {
         super(driver);
     }
 
-
     @FindBy(tagName= "iframe")
     List<WebElement> iframes;
 
@@ -43,12 +42,12 @@ public class ContactPage extends BasePage {
         //Прокрутка элемента в видимую область
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", userNameContactField);
-
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
 
         type(userNameContactField,userNameForContactForm);
         click(userEmailContactField);
