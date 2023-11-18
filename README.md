@@ -31,7 +31,7 @@ Selenium, TestNG
 · Test reports are done using TestLink:  [testLinkReports](https://drive.google.com/drive/folders/11D6jQNUY_bcpcGEJQPQveZ359b7EuuIr?usp=sharing)
 
 Integration with Jenkins
-Automated tests are integrated with Jenkins for regular code checks: [autoTestsResults](https://drive.google.com/drive/folders/1gNH0KdGPR2ygKUES9SH4fK9nW7B4kuGB?usp=sharing)
+Automated tests are integrated with Jenkins for regular code checks: [jenkinsReport](https://docs.google.com/document/d/17IDpZEbvjyG9-zVMBauEvj7SUA7nEM7AjU2eRHmd750/edit?usp=sharing)
 
 
 Thank you for using the Dog Services Automated Testing Project!   🐾
