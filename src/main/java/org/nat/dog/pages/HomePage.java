@@ -93,6 +93,7 @@ public class HomePage extends BasePage {
 
 
     @FindBy(css = ".btn.btn-secondary")
+    //@FindBy(css = "body.modal-open:nth-child(4) div.fade.modal.show:nth-child(4) div.modal-dialog div.modal-content div.modal-footer > button.btn.btn-secondary")
     WebElement OkButton;
 
     public HomePage clickOk() {

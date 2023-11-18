@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 84, Failures: 3, Errors: 0, Skipped: 60, Time elapsed: 293.691 s <<< FAILURE! - in TestSuite
+init(org.nat.dog.tests.footerPage.FooterPageTests)  Time elapsed: 7.184 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: unknown error: failed to write prefs file 
+Host info: host: 'DESKTOP-OS617JJ', ip: '172.18.176.1'
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
+
+init(org.nat.dog.tests.homePage.HomePageTests)  Time elapsed: 3.831 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: unknown error: failed to write prefs file 
+Host info: host: 'DESKTOP-OS617JJ', ip: '172.18.176.1'
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
+
+init(org.nat.dog.tests.kennelsPage.KennelsPageTests)  Time elapsed: 5.166 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: unknown error: failed to write prefs file 
+Host info: host: 'DESKTOP-OS617JJ', ip: '172.18.176.1'
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
+

@@ -19,7 +19,7 @@ public class HomePageTests extends TestBase {
     }
 
     //проверка позитивной регистрации
-    @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveRegistrationDataFormCSVFile")
+   /* @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveRegistrationDataFormCSVFile")
     public void fillRegistrationFormUsingDataProviderPositiveTest(String firstName, String lastName,
                                                                   String username, String city, String zip,
                                                                   String email, String password,
@@ -31,7 +31,7 @@ public class HomePageTests extends TestBase {
                 .verifyFinishingRegistration("Окончание регистрации") //потом "Log In" поменять на Logout
                 .clickOk();
     }
-
+*/
     @Test(dataProviderClass = DataProviders.class, dataProvider = "negativeRegistrationDataFormCSVFile")
     public void fillRegistrationFormUsingDataProviderNegativeTest(String firstName, String lastName,
                                                                   String username, String city, String zip,

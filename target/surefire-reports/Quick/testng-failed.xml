@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Quick]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Quick(failed)" verbose="0">
+    <classes>
+      <class name="org.nat.dog.tests.footerPage.FooterPageTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="isVerkaufVonHundeLinkPresentTest"/>
+          <include name="isZahlungLinkClickableTest"/>
+          <include name="isRegistrirenLinkClickableTest"/>
+          <include name="isNutzungsvertragLinkPresentTest"/>
+          <include name="startLogger"/>
+          <include name="isYoutubeComponentPresentTest"/>
+          <include name="isVerkaufVonHundeLinkClickableTest"/>
+          <include name="isRegistrirenLinkPresentTest"/>
+          <include name="isPhonePresentTest"/>
+          <include name="init"/>
+          <include name="isZahlungLinkPresentTest"/>
+        </methods>
+      </class> <!-- org.nat.dog.tests.footerPage.FooterPageTests -->
+      <class name="org.nat.dog.tests.kennelsPage.KennelsPageTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="precondition"/>
+          <include name="fillKennelsForm"/>
+          <include name="startLogger"/>
+          <include name="showKennelsList"/>
+          <include name="init"/>
+          <include name="KennelsPageTests"/>
+        </methods>
+      </class> <!-- org.nat.dog.tests.kennelsPage.KennelsPageTests -->
+      <class name="org.nat.dog.tests.homePage.HomePageTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="fillLoginFormUsingDataProviderTest"/>
+          <include name="fillLoginFormUsingDataProviderNegativeTest"/>
+          <include name="fillRegistrationFormUsingDataProviderNegativeTest"/>
+          <include name="isRegistrationLinkPresentTest"/>
+          <include name="isHomeComponentPresentTest"/>
+          <include name="imgTest"/>
+          <include name="loginPositiveTest1"/>
+          <include name="startLogger"/>
+          <include name="init"/>
+          <include name="fillRegistrationFormUsingDataProviderPositiveTest"/>
+        </methods>
+      </class> <!-- org.nat.dog.tests.homePage.HomePageTests -->
+    </classes>
+  </test> <!-- Quick(failed) -->
+</suite> <!-- Failed suite [Quick] -->
