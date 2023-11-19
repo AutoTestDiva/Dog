@@ -12,7 +12,7 @@ public class AboutPage extends BasePage {
     }
 
 
-    @FindBy(xpath="//a[contains(text(),'About')]")
+    @FindBy(xpath="//a[contains(text(),'Um')]")
     WebElement titleAboutUs;
     public AboutPage verifyAboutElement(String text) {
         Assert.assertTrue(isTextPresent(titleAboutUs, text));

@@ -5,13 +5,14 @@ import org.nat.dog.pages.clinics.ClinicsPage;
 import org.nat.dog.pages.contact.ContactPage;
 
 import org.nat.dog.pages.kennels.KennelsPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 
 public class HomePage extends BasePage {
@@ -66,7 +67,8 @@ public class HomePage extends BasePage {
     }
 
     //залогинивание
-    @FindBy(xpath = "//button[contains(text(),'Log In')]")
+    //@FindBy(css = "nav._backgraund_1x9ek_5.navbar.navbar-expand-lg.navbar-light:nth-child(1) div._cont_1x9ek_8.container div.navbar-collapse.collapse div._qwertyblock_1q8q6_5 div.navbar-nav > button.mr-2.btn.btn-primary")
+    @FindBy(xpath = "//button[contains(text(),'Betreten')]")
     WebElement loginLink;
 
     public HomePage getLoginLink() {
@@ -83,7 +85,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    @FindBy(css = "[type='submit']")
+    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/form[1]/button[1]")
     WebElement submitFormButton;
 
     public HomePage submit() {
@@ -92,8 +94,7 @@ public class HomePage extends BasePage {
     }
 
 
-    @FindBy(css = ".btn.btn-secondary")
-    //@FindBy(css = "body.modal-open:nth-child(4) div.fade.modal.show:nth-child(4) div.modal-dialog div.modal-content div.modal-footer > button.btn.btn-secondary")
+    @FindBy(xpath = "//button[contains(text(),'Ok')]")
     WebElement OkButton;
 
     public HomePage clickOk() {
@@ -113,7 +114,7 @@ public class HomePage extends BasePage {
     }
 
     // регистрация
-    @FindBy(xpath = "//button[contains(text(),'Registration')]") //потом поменять локатор на Registered
+    @FindBy(xpath = "//button[contains(text(),'Anmeldung')]") //потом поменять локатор на Registered
             WebElement registrationLink;
 
     public HomePage getRegistrationLink() {
@@ -130,13 +131,14 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/form[1]/button[1]")
     WebElement submitInRegistrationFormButton;
-
-    public HomePage submitInRegistrationForm() {
-        click(submitInRegistrationFormButton);
-        return this;
-    }
+       public HomePage submitInRegistrationForm() {
+        pause(1000);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(submitInRegistrationFormButton).click().perform();
+            return this;
+          }
 
     @FindBy(css = ".invalid-feedback.mb-3")
     WebElement wrongUserName;
@@ -171,7 +173,7 @@ public class HomePage extends BasePage {
         return new KennelsPage(driver);
     }
 
-    @FindBy(xpath = "//a[contains(text(),'About')]")
+    @FindBy(xpath = "//a[contains(text(),'Um')]")
     WebElement aboutLink;
 
     public AboutPage getAbout() {
@@ -179,7 +181,7 @@ public class HomePage extends BasePage {
         return new AboutPage(driver);
     }
 
-    @FindBy(xpath = "//div[contains(text(),'Окончание регистрации')]")
+    @FindBy(xpath = "//div[contains(text(),'Ende der Registrierung')]")
     WebElement finishingRegistrationLink;
 
     public HomePage verifyFinishingRegistration(String text) {
@@ -187,7 +189,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    @FindBy(xpath = "//a[contains(text(),'Contact')]")
+    @FindBy(xpath = "//a[contains(text(),'Kontakt')]")
     WebElement contactLink;
 
     public ContactPage getContact() {

@@ -26,7 +26,7 @@ public class KennelsPage extends BasePage {
 
 
 
-    @FindBy(css = "div._searchSitters_h9df0_26 div:nth-child(2) div._selectDate_h9df0_75 form:nth-child(1) div._selectplz_h9df0_87 > select:nth-child(2)")
+    @FindBy(css = "div._searchSitters_bvmua_26 div:nth-child(2) div._selectDate_bvmua_75 form:nth-child(1) div._selectplz_bvmua_87 > select:nth-child(2)")
     WebElement cityKennelsField;
    // @FindBy(xpath = "//option[contains(text(),'Berlin')]")
    // WebElement cityKennelsInput;
@@ -39,7 +39,7 @@ public class KennelsPage extends BasePage {
     }
 
 
-    @FindBy(css="div:nth-child(2) section:nth-child(2) div:nth-child(1) div._btnList_h9df0_172 > button._btn_h9df0_107")
+    @FindBy(xpath="//button[contains(text(),'Swow kennels list')]")
     WebElement kennelsListButton;
     public KennelsPage clickKennelsList() {
         JavascriptExecutor js = (JavascriptExecutor) driver;

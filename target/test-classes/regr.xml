@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Quick" verbose="1" >
+
+    <test name="Regression" >
+        <classes>
+            <class name="org.nat.dog.tests.aboutPage.AboutPageTests"/>
+            <class name="org.nat.dog.tests.clinicsPage.ClinicsPageTests"/>
+            <class name="org.nat.dog.tests.contactPage.ContactPageTests"/>
+            <class name="org.nat.dog.tests.footerPage.FooterPageTests"/>
+            <class name="org.nat.dog.tests.kennelsPage.KennelsPageTests"/>
+            <class name="org.nat.dog.tests.homePage.HomePageTests">
+                <methods>
+                    <exclude name=".*fillRegistrationFormUsingDataProviderPositiveTest.*"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

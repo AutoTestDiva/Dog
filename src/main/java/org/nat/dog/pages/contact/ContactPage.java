@@ -57,7 +57,7 @@ public class ContactPage extends BasePage {
         return this;
     }
 
-    @FindBy(css= "._btn_104v1_86")
+    @FindBy(xpath= "//button[contains(text(),'Send message')]")
     WebElement sendMessage;
     public ContactPage sendMessageButton() {
         click(sendMessage);

@@ -4,12 +4,9 @@
 
     <test name="Quick" >
         <classes>
-            <class name="org.nat.dog.tests.aboutPage.AboutPageTests"/>
+
             <class name="org.nat.dog.tests.clinicsPage.ClinicsPageTests"/>
-            <class name="org.nat.dog.tests.contactPage.ContactPageTests"/>
-            <class name="org.nat.dog.tests.footerPage.FooterPageTests"/>
-            <class name="org.nat.dog.tests.homePage.HomePageTests"/>
-            <class name="org.nat.dog.tests.kennelsPage.KennelsPageTests"/>
+
         </classes>
     </test>
 

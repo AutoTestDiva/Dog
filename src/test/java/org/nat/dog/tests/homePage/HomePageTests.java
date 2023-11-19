@@ -28,7 +28,7 @@ public class HomePageTests extends TestBase {
                 .enterRegistrationData(firstName, lastName, username, city, zip, email, password, repeatPassword)
                 .clickOnCheckBox()
                 .submitInRegistrationForm()
-                .verifyFinishingRegistration("Окончание регистрации") //потом "Log In" поменять на Logout
+                .verifyFinishingRegistration("Ende der Registrierung") //потом "Log In" поменять на Logout
                 .clickOk();
     }
 
@@ -72,7 +72,6 @@ public class HomePageTests extends TestBase {
                 .submit()
                 .warningWrongUserName("Не все поля заполнены");
     }
-
 
     @Test
     void imgTest() {
