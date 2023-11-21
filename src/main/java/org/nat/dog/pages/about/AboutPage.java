@@ -11,7 +11,6 @@ public class AboutPage extends BasePage {
         super(driver);
     }
 
-
     @FindBy(xpath="//a[contains(text(),'Um')]")
     WebElement titleAboutUs;
     public AboutPage verifyAboutElement(String text) {

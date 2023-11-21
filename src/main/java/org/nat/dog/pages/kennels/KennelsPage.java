@@ -1,7 +1,6 @@
 package org.nat.dog.pages.kennels;
 
 import org.nat.dog.pages.BasePage;
-import org.nat.dog.pages.clinics.ClinicsPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,13 +23,12 @@ public class KennelsPage extends BasePage {
         return this;
     }
 
-
-
-    @FindBy(css = "div._searchSitters_bvmua_26 div:nth-child(2) div._selectDate_bvmua_75 form:nth-child(1) div._selectplz_bvmua_87 > select:nth-child(2)")
+    @FindBy(xpath = "//a[contains(text(),'Kennels')]")
+    WebElement kennelsLink;
+    @FindBy(css = "div._searchSitters_1n1nd_26 div:nth-child(2) div._selectDate_1n1nd_72 form:nth-child(1) div._selectplz_1n1nd_83 > select:nth-child(2)")
     WebElement cityKennelsField;
-   // @FindBy(xpath = "//option[contains(text(),'Berlin')]")
-   // WebElement cityKennelsInput;
     public KennelsPage selectKennelsCity(String city1) {
+        click(kennelsLink);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(cityKennelsField));
         Select select = new Select(cityKennelsField);
@@ -38,10 +36,10 @@ public class KennelsPage extends BasePage {
         return this;
     }
 
-
     @FindBy(xpath="//button[contains(text(),'Swow kennels list')]")
     WebElement kennelsListButton;
     public KennelsPage clickKennelsList() {
+        click(kennelsLink);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", kennelsListButton);
         try {
@@ -49,7 +47,6 @@ public class KennelsPage extends BasePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
         click(kennelsListButton);
         return this;
     }

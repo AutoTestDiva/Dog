@@ -17,7 +17,6 @@ import java.time.Duration;
 public class TestBase {
     Logger logger = LoggerFactory.getLogger(TestBase.class);
     String browser = System.getProperty("browser", Browser.CHROME.browserName()); // getProperty - позволяет создавать настройки, в данном случае настройки браузера
-
     public WebDriver driver;
 
     @BeforeMethod
@@ -26,11 +25,9 @@ public class TestBase {
         logger.info("Start method --> " + m.getName());
     }
 
-
     @BeforeMethod
     public void init() {
         System.err.close();
-        //driver = new ChromeDriver();
         if (browser.equalsIgnoreCase(Browser.CHROME.browserName())) {
             driver = new ChromeDriver();
             logger.info("All test run in Chrome browser");
@@ -46,7 +43,6 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-
     @AfterMethod(enabled = true)
     public void tearDown() {
         driver.quit();

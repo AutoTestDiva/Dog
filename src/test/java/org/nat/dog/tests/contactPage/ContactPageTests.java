@@ -5,7 +5,6 @@ import org.nat.dog.pages.contact.ContactPage;
 import org.nat.dog.tests.TestBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static org.nat.dog.data.UserData.*;
 
 public class ContactPageTests extends TestBase {
@@ -13,7 +12,6 @@ public class ContactPageTests extends TestBase {
     public void precondition(){
      new HomePage(driver).getContact();
     }
-
     @Test
     public void isGoingToGoogleMapsTest() {
         new ContactPage(driver).returnListOfFrames();

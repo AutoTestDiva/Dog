@@ -1,7 +1,6 @@
 package org.nat.dog.utils;
 
 import org.testng.annotations.DataProvider;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,7 +10,6 @@ public class DataProviders { //этот класс с методами позв�
     @DataProvider
     public Iterator<Object[]> positiveLoginDataFormCSVFile() throws IOException {
         List<Object[]> list=new ArrayList<Object[]>();
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(DataProviders.class
                 .getResourceAsStream("/positiveLogin.csv")));//достаем данные из файла и добавляем их  в лист
         String line = reader.readLine();
@@ -25,7 +23,6 @@ public class DataProviders { //этот класс с методами позв�
     @DataProvider
     public Iterator<Object[]> negativeLoginDataFormCSVFile() throws IOException {
         List<Object[]> list=new ArrayList<Object[]>();
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(DataProviders.class
                 .getResourceAsStream("/negativeLogin.csv")));//достаем данные из файла и добавляем их  в лист
         String line = reader.readLine();
@@ -36,11 +33,9 @@ public class DataProviders { //этот класс с методами позв�
         return list.iterator();
     }
 
-
     @DataProvider
     public Iterator<Object[]> positiveRegistrationDataFormCSVFile() throws IOException {
         List<Object[]> list=new ArrayList<Object[]>();
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(DataProviders.class
                 .getResourceAsStream("/positiveRegistration.csv")));//достаем данные из файла и добавляем их  в лист
         String line = reader.readLine();
@@ -51,11 +46,9 @@ public class DataProviders { //этот класс с методами позв�
         return list.iterator();
     }
 
-
     @DataProvider
     public Iterator<Object[]> negativeRegistrationDataFormCSVFile() throws IOException {
         List<Object[]> list=new ArrayList<Object[]>();
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(DataProviders.class
                 .getResourceAsStream("/negativeRegistration.csv")));//достаем данные из файла и добавляем их  в лист
         String line = reader.readLine();

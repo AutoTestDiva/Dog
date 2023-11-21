@@ -12,7 +12,6 @@ public class HomePageTests extends TestBase {
     public void isHomeComponentPresentTest() {
         new HomePage(driver).isHomeComponentPresent();
     }
-
     @Test
     public void isRegistrationLinkPresentTest() {
         new HomePage(driver).isRegistrationLinkPresent();
@@ -43,7 +42,6 @@ public class HomePageTests extends TestBase {
                 .submitInRegistrationForm()
                 .warningWrongEmail();
     }
-
     @Test   //первый способ ввода юзернейма, password не из файла csv, а из class UserData
     public void loginPositiveTest1() {
         new HomePage(driver).getLoginLink();
@@ -52,17 +50,15 @@ public class HomePageTests extends TestBase {
                 .submit()
                 .verifyLogout("Log Out");
     }
-
     @Test(dataProviderClass = DataProviders.class, dataProvider = "positiveLoginDataFormCSVFile")
     //с использованием файла
     public void fillLoginFormUsingDataProviderTest(String username, String password) {
         new HomePage(driver).getLoginLink()
                 .enterLoginData(username, password)
                 .submit()
-                .verifyLogout("Log Out"); //потом "Log In" поменять на Logout
+                .verifyLogout("Log Out");
 
     }
-
     //с использованием файла
     @Test(dataProviderClass = DataProviders.class, dataProvider = "negativeLoginDataFormCSVFile")
 
@@ -72,7 +68,6 @@ public class HomePageTests extends TestBase {
                 .submit()
                 .warningWrongUserName("Не все поля заполнены");
     }
-
     @Test
     void imgTest() {
         new HomePage(driver).returnListOfImg();

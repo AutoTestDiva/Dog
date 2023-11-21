@@ -5,7 +5,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
@@ -19,7 +18,6 @@ public abstract class BasePage {
         PageFactory.initElements(driver, this); //главная надстройка
         js = (JavascriptExecutor) driver;
     }
-
     public void click(WebElement element){
         element.click();
     }
@@ -57,7 +55,6 @@ public abstract class BasePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public void verifyLinks(String linkUrl) {
@@ -73,7 +70,6 @@ public abstract class BasePage {
             } else {
                 System.out.println(linkUrl + " - " + connection.getResponseMessage());
             }
-
         }catch (Exception ex){
             System.out.println(linkUrl + " - " + ex.getMessage() + " is broken link");
         }
@@ -87,24 +83,16 @@ public abstract class BasePage {
     public void hideFooter() {
         js.executeScript("document.querySelector('footer').style.display='none';");
     }
-
     public void hideAd(){
         js.executeScript("document.getElementById('adplus-anchor').style.display='none';");
     }
-
-
-
     public void clickWithRectangle(WebElement element, int x, int y) {
-
         Rectangle rectangle = element.getRect();
-
         int xOffset = rectangle.getWidth() / x;
         int yOffset = rectangle.getHeight() / y;
-
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
         actions.moveByOffset(-xOffset,-yOffset).click().perform();
-
     }
     public String getValueAttribute(WebElement element, String name) {
         return element.getAttribute(name);

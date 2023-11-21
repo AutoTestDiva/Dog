@@ -2,7 +2,6 @@ package org.nat.dog.pages.clinics;
 
 import org.nat.dog.pages.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,7 +16,6 @@ public class ClinicsPage extends BasePage {
     public ClinicsPage(WebDriver driver) {
         super(driver);
     }
-
     @FindBy(xpath="//a[contains(text(),'Clinics')]")
     WebElement titleClinics;
     public ClinicsPage verifyClinicsElement(String text) {
@@ -25,13 +23,12 @@ public class ClinicsPage extends BasePage {
         return this;
     }
 
-
-    @FindBy(xpath = "//body/div[@id='root']/div[1]/section[1]/div[2]/div[2]/div[1]/form[1]/div[1]/select[1]")
+    @FindBy(xpath = "//a[contains(text(),'Clinics')]")
+    WebElement clinicsLink;
+    @FindBy(css = "div._searchSitters_1prhi_37 div:nth-child(2) div._selectDate_1prhi_83 form:nth-child(1) div._selectplz_1prhi_94 > select:nth-child(2)")
     WebElement cityField;
-  //  @FindBy(xpath = "//option[contains(text(),'Berlin')]")
-  //  WebElement cityInput;
-
-  public ClinicsPage selectCity(String city1) {
+    public ClinicsPage selectCity(String city1) {
+      click(clinicsLink);
       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
       wait.until(ExpectedConditions.elementToBeClickable(cityField));
       Select select = new Select(cityField);
@@ -39,10 +36,10 @@ public class ClinicsPage extends BasePage {
       return this;
   }
 
-
     @FindBy(xpath="//button[contains(text(),'Show clinic list')]")
     WebElement clinicsListButton;
     public ClinicsPage clickClinicsList() {
+        click(clinicsLink);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", clinicsListButton);
         try {
@@ -50,7 +47,6 @@ public class ClinicsPage extends BasePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
       click(clinicsListButton);
       return this;
     }
