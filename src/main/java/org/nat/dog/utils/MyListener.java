@@ -57,7 +57,7 @@ public class MyListener implements WebDriverListener {
 
     @Override
     public void beforeFindElements(WebDriver driver, By locator) {
-        WebDriverListener.super.beforeFindElements(driver, locator);
+       WebDriverListener.super.beforeFindElements(driver, locator);
         logger.info("We find elements: " + locator);
         logger.info("******************************");
     }

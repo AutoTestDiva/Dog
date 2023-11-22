@@ -3,7 +3,6 @@ package org.nat.dog.tests;
 import org.nat.dog.utils.MyListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.events.WebDriverListener;
@@ -33,7 +32,7 @@ public class TestBase {
             driver = new ChromeDriver();
             logger.info("All test run in Chrome browser");
         } else if (browser.equalsIgnoreCase(Browser.FIREFOX.browserName())) {
-            driver = new FirefoxDriver();
+            driver = new ChromeDriver();
             logger.info("All test run in Firefox browser");
         }
         WebDriverListener listener = new MyListener();

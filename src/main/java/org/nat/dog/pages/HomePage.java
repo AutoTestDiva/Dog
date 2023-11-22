@@ -155,6 +155,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[contains(text(),'Ende der Registrierung')]")
     WebElement finishingRegistrationLink;
     public HomePage verifyFinishingRegistration(String text) {
+        pause(2000);
         Assert.assertTrue(shouldHaveText(finishingRegistrationLink, text, 20));
         return this;
     }
