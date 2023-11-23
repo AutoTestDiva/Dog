@@ -17,15 +17,8 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.8.1</version>
+            <version>4.12.1</version>
         </dependency>
-
-        <dependency>
-          <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-firefox-driver</artifactId>
-        <version>4.8.1</version> <!-- Уточните актуальную версию -->
-        </dependency>
-
 
 
         <dependency>
@@ -66,23 +59,6 @@
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <application.properties>/application.properties</application.properties>
-                    </systemPropertyVariables>
-                </configuration>
-            </plugin>
-
-
-
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version> <!-- Уточните актуальную версию -->
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <browser>firefox</browser> <!-- Установите значение браузера здесь -->
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
