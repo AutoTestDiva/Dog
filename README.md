@@ -26,6 +26,7 @@ Selenium, TestNG
 . Specification of the project look here: [specification](https://docs.google.com/document/d/1MhEywOaZgZV2H8nt1kC2nSFHZLJkqHev/edit?usp=sharing&ouid=107159386401864051408&rtpof=true&sd=true)
 · Test items were made using MindMup: [testItems1](https://drive.google.com/file/d/1E0OYOPirQnJzSiN_agZFYP8w1WacsrL-/view?usp=sharing)
  [testItems2](https://drive.google.com/file/d/1aPwI9o_U9QyNsUAfkyr-vGz5bzivq6Yu/view?usp=sharing)
+[stateTransitionDiagram](https://drive.google.com/file/d/1ip7VUccSgNJDwygLA7H8heAsPU8lotOk/view?usp=sharing)
  Test reports are done using IntelliJ IDEA: [test_logs_IntelliJi](https://drive.google.com/drive/folders/1AQQv6BX0-AqeGcMOXk7-ZeWm_4EcvxIA?usp=sharing)
 · Bug tracking are done using JIRA: [bugTracking](https://drive.google.com/drive/folders/1qgkIflAhdE7ZyG7723SdD5qsr4QEzcM_?usp=sharing)
 · Test reports are done using TestLink:  [testLinkReports](https://drive.google.com/drive/folders/11D6jQNUY_bcpcGEJQPQveZ359b7EuuIr?usp=sharing)
