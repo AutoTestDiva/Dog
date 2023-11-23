@@ -155,7 +155,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[contains(text(),'Ende der Registrierung')]")
     WebElement finishingRegistrationLink;
     public HomePage verifyFinishingRegistration(String text) {
-        pause(2000);
+        pause(4000);
         Assert.assertTrue(shouldHaveText(finishingRegistrationLink, text, 20));
         return this;
     }
@@ -413,7 +413,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    @FindBy(css = "section:nth-child(1) form._searchSitters_y0pjj_17 div._descrSearch_y0pjj_29 div._descr1_y0pjj_36 > p._pHunde_y0pjj_47")
+    @FindBy(css = "div:nth-child(2) div:nth-child(2) section:nth-child(1) form._searchSitters_1555s_18 > div._selOption_1555s_124")
     WebElement dogsitterForm;
     public HomePage isDogsitterFormPresent() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -427,10 +427,9 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    @FindBy(css = "section:nth-child(1) form._searchSitters_y0pjj_17 div._selectDate_y0pjj_62 div._selectplz_y0pjj_73 > input.form-control")
+    @FindBy(css = "section:nth-child(1) form._searchSitters_1555s_18 div._selectDate_1555s_63 div._selectplz_1555s_74 > input.form-control")
     WebElement cityFieldInDogsitterForm;
     public HomePage enterCityInCityField(String city) {
-       // click(cityFieldInDogsitterForm);
         type(cityFieldInDogsitterForm, city);
          return this;
     }
@@ -438,6 +437,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//p[.='bis 5 kg']")
     WebElement weight;
     public HomePage clickDogWeightField() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", weight);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         click(weight);
         return this;
     }
@@ -453,6 +459,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//button[.='Wählen Sie einen Hundesitter']")
     WebElement selectDogsitterButton;
     public HomePage clickSelectDogsitter() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", selectDogsitterButton);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         click(selectDogsitterButton);
         return this;
     }
@@ -464,7 +477,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    @FindBy(xpath = "//div[.='sina14@gmail.com']")
+    @FindBy(xpath = "//h4[.='BEREIT, ZEIT MIT IHREM HUND ZU VERBRINGEN']")
     WebElement dogsitterEmailField;
     public HomePage isDogsitterEmailPresent(String dogsitterEmail) {
         Assert.assertTrue(shouldHaveText(dogsitterEmailField, dogsitterEmail, 10));

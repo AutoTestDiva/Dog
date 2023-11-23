@@ -20,6 +20,9 @@
             <version>4.12.1</version>
         </dependency>
 
+
+
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -30,8 +33,6 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.8</version>
         </dependency>
-
-
 
     </dependencies>
 
@@ -59,10 +60,14 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>                   <application.properties>/application.properties</application.properties>
+                    <systemPropertyVariables>
+                        <application.properties>/application.properties</application.properties>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
+
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

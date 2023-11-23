@@ -3,22 +3,25 @@
 <suite name="Failed suite [Quick]" guice-stage="DEVELOPMENT" verbose="0">
   <test thread-count="5" name="Quick(failed)" verbose="0">
     <classes>
-      <class name="org.nat.dog.tests.footerPage.FooterPageTests">
+      <class name="org.nat.dog.tests.aboutPage.AboutPageTests">
         <methods>
           <include name="tearDown"/>
-          <include name="isVerkaufVonHundeLinkPresentTest"/>
-          <include name="isZahlungLinkClickableTest"/>
-          <include name="isRegistrirenLinkClickableTest"/>
-          <include name="isNutzungsvertragLinkPresentTest"/>
+          <include name="isAboutComponentPresentTest"/>
+          <include name="precondition"/>
           <include name="startLogger"/>
-          <include name="isYoutubeComponentPresentTest"/>
-          <include name="isVerkaufVonHundeLinkClickableTest"/>
-          <include name="isRegistrirenLinkPresentTest"/>
-          <include name="isPhonePresentTest"/>
           <include name="init"/>
-          <include name="isZahlungLinkPresentTest"/>
         </methods>
-      </class> <!-- org.nat.dog.tests.footerPage.FooterPageTests -->
+      </class> <!-- org.nat.dog.tests.aboutPage.AboutPageTests -->
+      <class name="org.nat.dog.tests.contactPage.ContactPageTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="isGoingToGoogleMapsTest"/>
+          <include name="precondition"/>
+          <include name="startLogger"/>
+          <include name="fillInTouchFormTest"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- org.nat.dog.tests.contactPage.ContactPageTests -->
       <class name="org.nat.dog.tests.kennelsPage.KennelsPageTests">
         <methods>
           <include name="tearDown"/>
@@ -30,21 +33,17 @@
           <include name="KennelsPageTests"/>
         </methods>
       </class> <!-- org.nat.dog.tests.kennelsPage.KennelsPageTests -->
-      <class name="org.nat.dog.tests.homePage.HomePageTests">
+      <class name="org.nat.dog.tests.clinicsPage.ClinicsPageTests">
         <methods>
           <include name="tearDown"/>
-          <include name="fillLoginFormUsingDataProviderTest"/>
-          <include name="fillLoginFormUsingDataProviderNegativeTest"/>
-          <include name="fillRegistrationFormUsingDataProviderNegativeTest"/>
-          <include name="isRegistrationLinkPresentTest"/>
-          <include name="isHomeComponentPresentTest"/>
-          <include name="imgTest"/>
-          <include name="loginPositiveTest1"/>
+          <include name="isClinicsComponentPresentTest"/>
+          <include name="precondition"/>
+          <include name="showClinicsList"/>
           <include name="startLogger"/>
+          <include name="fillClinicsForm"/>
           <include name="init"/>
-          <include name="fillRegistrationFormUsingDataProviderPositiveTest"/>
         </methods>
-      </class> <!-- org.nat.dog.tests.homePage.HomePageTests -->
+      </class> <!-- org.nat.dog.tests.clinicsPage.ClinicsPageTests -->
     </classes>
   </test> <!-- Quick(failed) -->
 </suite> <!-- Failed suite [Quick] -->

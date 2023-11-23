@@ -29,7 +29,7 @@ public class DogsitterPageTests extends TestBase {
                 .verifyDogWeight("bis 5 kg")
                 .clickSelectDogsitter()
                 .verifyAppearingList("Wir sind bereit, uns um Ihren Hund zu kümmern")
-                .isDogsitterEmailPresent("sina14@gmail.com")
+                .isDogsitterEmailPresent("BEREIT, ZEIT MIT IHREM HUND ZU VERBRINGEN")
                 .isNextPageOfListClickable();
     }
 }

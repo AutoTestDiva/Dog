@@ -1,0 +1,8 @@
+org\nat\dog\tests\dogsitterPage\DogsitterPageTests.class
+org\nat\dog\tests\TestBase.class
+org\nat\dog\tests\footerPage\FooterPageTests.class
+org\nat\dog\tests\aboutPage\AboutPageTests.class
+org\nat\dog\tests\kennelsPage\KennelsPageTests.class
+org\nat\dog\tests\homePage\HomePageTests.class
+org\nat\dog\tests\clinicsPage\ClinicsPageTests.class
+org\nat\dog\tests\contactPage\ContactPageTests.class
