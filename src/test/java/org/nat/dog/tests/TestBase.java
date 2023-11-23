@@ -17,7 +17,7 @@ import java.time.Duration;
 
 public class TestBase {
     Logger logger = LoggerFactory.getLogger(TestBase.class);
-    String browser = System.getProperty("browser", Browser.CHROME.browserName()); // getProperty - позволяет создавать настройки, в данном случае настройки браузера
+    String browser = System.getProperty("browser", Browser.FIREFOX.browserName()); // getProperty - позволяет создавать настройки, в данном случае настройки браузера
     public WebDriver driver;
 
     @BeforeMethod

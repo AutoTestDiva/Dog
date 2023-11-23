@@ -478,9 +478,17 @@ public class HomePage extends BasePage {
     }
 
     @FindBy(xpath = "//h4[.='BEREIT, ZEIT MIT IHREM HUND ZU VERBRINGEN']")
-    WebElement dogsitterEmailField;
-    public HomePage isDogsitterEmailPresent(String dogsitterEmail) {
-        Assert.assertTrue(shouldHaveText(dogsitterEmailField, dogsitterEmail, 10));
+    WebElement dogsittersListField;
+    public HomePage isListOfDogsittersPresent(String dogsittersList) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", dogsittersListField);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertTrue(shouldHaveText(dogsittersListField, dogsittersList, 10));
         pause(10);
         return this;
     }
